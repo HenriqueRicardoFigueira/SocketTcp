@@ -6,19 +6,19 @@ Implementação de um Socket TCP em Python.
 Instalar Python 3, executar o arquivo server.py e em outro terminal client.py.
 
 ### As mensagens de solicitação estão no formato String UTF:
-#### TIME
+#### TIME:
 Retorna a hora do sistema como uma String UTF no formato HH:MM:SS
-#### DATE<\br>
+#### DATE:
 Retorna a data do sistema como uma String UTF no formato DD/MM/AAAA
-#### FILES<\br>
+#### FILES:
 Retorna os arquivos da pasta definida por padrao (p. ex. /home/user/shared)
 Formato:
 retorna um inteiro indicando o número de arquivos (int)
 envia individualmente o nome de um arquivo como uma String UTF.
-#### DOWN nome-arquivo<\br>
+#### DOWN nome-arquivo:
 Faz o download do arquivo nome-arquivo
 Formato:
 retorna um inteiro 0 se nome não existe ou retorna o tamanho do arquivo (int) em bytes.
 recebe byte a byte e grava em um diretório padrão
-#### EXIT
+#### EXIT:
 Finaliza a conexão
