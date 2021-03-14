@@ -12,8 +12,8 @@ Retorna a hora do sistema como uma String UTF no formato HH:MM:SS
 Retorna a data do sistema como uma String UTF no formato DD/MM/AAAA
 #### FILES:
 Retorna os arquivos da pasta definida por padrao 
-Linux: /home/user/shared
-Windows: C:/Windows/Temp
+<p>Linux: /home/user/shared</p>
+<p>Windows: C:/Windows/Temp</p>
 Formato:
 retorna um inteiro indicando o número de arquivos (int)
 envia individualmente o nome de um arquivo como uma String UTF.
