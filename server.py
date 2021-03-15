@@ -2,27 +2,31 @@ import socket, platform, os, sys
 from _thread import *
 from datetime import datetime
 
-
+#criacao socket
 ServerSocket = socket.socket()
 host = '127.0.0.1'
 port = 1233
 ThreadCount = 0
+#tentativa de bind no endereço
 try:
     ServerSocket.bind((host, port))
 except socket.error as e:
     print(str(e))
 
+#esperando clients
 print('Waitiing for a Connection..')
 ServerSocket.listen(5)
 
-
+#thread client 
 def threaded_client(connection):
+   #envio mensagem cliente
    connection.send(str.encode('Welcome to the Servern'))
    state = True;
    listdir = ""
    file_list = ""
    system = ""
    
+   #tratativas do servidor
    while state:
       data = connection.recv(2048)
       request = data.decode('utf-8')
@@ -73,6 +77,7 @@ def threaded_client(connection):
          connection.sendall(str.encode("I dont understand :("))   
    connection.close()
 
+#conexao cliente e criacao da thread do cliente
 while True:
     Client, address = ServerSocket.accept()
     print('Connected to: ' + address[0] + ':' + str(address[1]))
